@@ -76,6 +76,7 @@ public class RestClient {
         Response r = webTarget
                 .request(MediaType.APPLICATION_JSON)
                 .header("Req-Header", "Req-Header-value")
+                .header("Authorization", "bearer 12345")
                 .header("JSESSIONID", RandomStringUtils.randomAlphanumeric(12))
                 .post(Entity.entity(new PostTO(userId, null, title, body), MediaType.APPLICATION_JSON));
 
